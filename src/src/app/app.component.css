@@ -1,0 +1,14 @@
+p {
+  font-family: Lato;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid black;
+}
+
+th, td {
+  height: 50px;
+    border: 1px solid black;
+}

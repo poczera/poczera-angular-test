@@ -1,0 +1,53 @@
+<div>
+  <form>
+        <label for="pName">Name </label>
+        <br/>
+        <input type="text" class="form-control" id="pName" name="pName" [(ngModel)]="pessoa.nome" required>
+<br/>
+
+      <label for="carro">Carro </label>
+      <br/>
+      <select class="form-control" id="carro" [(ngModel)]="pessoa.carroId" name="feed_store" placeholder="Select Store" (change)="populaCor()">
+          <option *ngFor="let carro of carros" 
+                 [value]="carro.id"
+                 [selected]="carro.id === '1'">
+              {{ carro.name }}
+          </option>
+    </select>
+  <br/>
+      <label for="carro">Marca</label>
+      <br/>
+      <select class="form-control" id="carro" [(ngModel)]="pessoa.corId" name="feed_store" placeholder="Select Store">
+          <option *ngFor="let cor of cores" 
+                 [value]="cor.id"
+                 [selected]="cor.id === 'pessoa.corId'">
+              {{ cor.name }}
+          </option>
+    </select>
+ 
+      <button (click)="save()" class="btn btn-success">Submit</button>
+ 
+    </form>
+
+    <table>
+      <thead>
+          <th>pessoa</th>
+          <th>id do carro</th>
+          <th>id do cor</th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let pe of pessoas" (click)="toEdit(pe)">
+          <td>
+            {{pe.nome}}
+          </td>
+          <td>
+            {{pe.carroId}}
+          </td>
+          <td>
+            {{pe.corId}}
+          </td>
+        </tr>
+      </tbody>
+
+    </table>
+</div>
